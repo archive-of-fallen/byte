@@ -1,0 +1,22 @@
+{
+  "name": "byte",
+  "version": "0.0.0",
+  "description": "A fun, multipurpose Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
+  },
+  "keywords": [
+    "fun",
+    "multipurpose",
+    "byte",
+    "discordjs",
+    "bot"
+  ],
+  "author": "FallenLight#5149",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
+}
