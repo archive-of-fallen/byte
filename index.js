@@ -75,6 +75,10 @@ client.on('message', msg => {
          msg.channel.send({embed});
        }
      }
+  
+    if (msg.isMentioned("388630510399782912") + " prefix") {
+      msg.reply(`My prefix is: ${prefix}`);
+    }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
         const embed = new Discord.RichEmbed()
