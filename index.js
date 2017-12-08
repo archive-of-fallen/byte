@@ -77,7 +77,7 @@ client.on('message', msg => {
      }
   
     if (msg.isMentioned("388630510399782912") + " prefix") {
-      msg.reply(`My prefix is: ${prefix}`);
+      return msg.reply(`My prefix is: ${prefix}`);
     }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
