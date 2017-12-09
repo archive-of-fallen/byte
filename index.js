@@ -9,6 +9,10 @@ client.on('ready', () => {
 let prefix = "b:"
 
 client.on('message', msg => {
+    if (!msg.channel.permissionsFor(client.user).has("SEND_MESSAGES") {
+        return msg.author.send(`You sent \`${msg.content}\` but I was unable to respond to it. Please make sure I have the \`SEND_MESSAGES\` permission.`)
+    }
+
     if (msg.content.startsWith(prefix + 'ping')) {
         msg.channel.send("Pinging...").then(sent => {
             sent.edit(`Pong! \`${sent.createdTimestamp - msg.createdTimestamp}ms\``)
