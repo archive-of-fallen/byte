@@ -25,6 +25,9 @@ client.on('message', msg => {
 
     if (msg.content.startsWith(prefix + 'esay')) {
         let args = msg.content.split(' ').slice(1).join(' ');
+        if (!msg.channel.permissionsFor(client.user).has("EMBED_LINKS")) {
+            return msg.reply(`I cannot send an embed in this channel. Please make sure I have the \`EMBED_LINKS\` permission.`);
+        }
         if (!args) {
             return msg.reply(`Please provide something for me to embed.`);
         }
