@@ -26,7 +26,7 @@ client.on('message', msg => {
     /* if (msg.content.startsWith(prefix + 'esay')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
-            return msg.reply(`Please provide something for embed.`);
+            return msg.reply(`Please provide something for me to embed.`);
         }
         const embed = new Discord.RichEmbed()
         .setTitle(`Message from ${msg.author.tag}`)
