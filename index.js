@@ -17,7 +17,7 @@ client.on('message', msg => {
 
     if (msg.content.startsWith(prefix + 'say')) {
         let args = msg.content.split(' ').slice(1).join(' ')
-        if (!args[0]) {
+        if (!args) {
             msg.reply(`Please provide something for me to say.`) 
         }
         msg.channel.send(`${args}`)
@@ -25,7 +25,7 @@ client.on('message', msg => {
 
     if (msg.content.startsWith(prefix + 'esay')) {
         let args = msg.content.split(' ').slice(1).join(' ')
-        if (!args[0]) {
+        if (!args) {
             msg.reply(`Please provide something for embed.`) 
         }
         const embed = new Discord.RichEmbed()
