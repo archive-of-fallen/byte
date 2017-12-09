@@ -18,7 +18,7 @@ client.on('message', msg => {
     if (msg.content.startsWith(prefix + 'say')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
-            msg.reply(`Please provide something for me to say.`) ;
+            msg.reply(`Please provide something for me to say.`);
         }
         return msg.channel.send(`${args}`);
     }
