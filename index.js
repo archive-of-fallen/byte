@@ -85,6 +85,8 @@ client.on('message', msg => {
   
     if (msg.content === "<@388630510399782912> prefix") {
       return msg.reply(`My prefix is: \`${prefix}\`.`);
+    } else if (msg.content === "<@!388630510399782912> prefix") {
+      return msg.reply(`My prefix is: \`${prefix}\`.`);
     }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
