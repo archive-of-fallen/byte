@@ -15,26 +15,26 @@ client.on('message', msg => {
         })
     }
 
-    if (msg.content.startsWith(prefix + 'say')) {
+    /* if (msg.content.startsWith(prefix + 'say')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
             return msg.reply(`Please provide something for me to say.`);
         }
         return msg.channel.send(`${args}`);
-    } 
+    } */
 
-    if (msg.content.startsWith(prefix + 'esay')) {
+    /* if (msg.content.startsWith(prefix + 'esay')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
-            return msg.reply(`Please provide something for me to embed.`);
+            return msg.reply(`Please provide something for embed.`);
         }
         const embed = new Discord.RichEmbed()
         .setTitle(`Message from ${msg.author.tag}`)
         .setColor(`RANDOM`)
-        .setDescription(args)
+        .setDescription(`${args}`)
 
         return msg.channel.send({embed});
-    } 
+    } */
 
     if (msg.content.startsWith(prefix + 'invite')) {
         msg.reply(`Invite me using this URL:\nhttps://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=388630510399782912.`)
