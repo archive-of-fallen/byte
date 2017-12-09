@@ -15,15 +15,15 @@ client.on('message', msg => {
         })
     }
 
-    if (msg.content.startsWith(prefix + 'say')) {
+    /* if (msg.content.startsWith(prefix + 'say')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
             return msg.reply(`Please provide something for me to say.`);
         }
         return msg.channel.send(`${args}`);
-    }
+    } */
 
-    if (msg.content.startsWith(prefix + 'esay')) {
+    /* if (msg.content.startsWith(prefix + 'esay')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
             return msg.reply(`Please provide something for embed.`);
@@ -34,7 +34,7 @@ client.on('message', msg => {
         .setDescription(`${args}`)
 
         return msg.channel.send({embed});
-    }
+    } */
 
     if (msg.content.startsWith(prefix + 'invite')) {
         msg.reply(`Invite me using this URL:\nhttps://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=388630510399782912.`)
@@ -85,6 +85,7 @@ client.on('message', msg => {
         .setTitle(`Commands`)
         .setColor(`RANDOM`)
         .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\``)
+        .setFooter(`${prefix}esay & ${prefix}say have been disabled. There's nothing wrong with the say command but the esay command is messed up.`)
 
         msg.channel.send({embed});
     }
