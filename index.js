@@ -91,7 +91,7 @@ client.on('message', msg => {
         .setTitle(`Commands`)
         .setColor(`RANDOM`)
         .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\``)
-        .setFooter(`${prefix}esay & ${prefix}say have been disabled. There's nothing wrong with the say command but the esay command is messed up.`)
+        // .setFooter(``)
 
         msg.channel.send({embed});
     }
