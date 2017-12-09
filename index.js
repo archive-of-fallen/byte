@@ -16,24 +16,24 @@ client.on('message', msg => {
     }
 
     if (msg.content.startsWith(prefix + 'say')) {
-        let args = msg.content.split(' ').slice(1).join(' ')
+        let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
-            msg.reply(`Please provide something for me to say.`) 
+            msg.reply(`Please provide something for me to say.`) ;
         }
-        msg.channel.send(`${args}`)
+        return msg.channel.send(`${args}`);
     }
 
     if (msg.content.startsWith(prefix + 'esay')) {
-        let args = msg.content.split(' ').slice(1).join(' ')
+        let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
-            msg.reply(`Please provide something for embed.`) 
+            msg.reply(`Please provide something for embed.`);
         }
         const embed = new Discord.RichEmbed()
         .setTitle(`Message from ${msg.author.tag}`)
         .setColor(`RANDOM`)
         .setDescription(`${args}`)
 
-        msg.channel.send({embed})
+        return msg.channel.send({embed});
     }
 
     if (msg.content.startsWith(prefix + 'invite')) {
