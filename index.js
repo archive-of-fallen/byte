@@ -18,7 +18,7 @@ client.on('message', msg => {
     if (msg.content.startsWith(prefix + 'say')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
-            msg.reply(`Please provide something for me to say.`);
+            return msg.reply(`Please provide something for me to say.`);
         }
         return msg.channel.send(`${args}`);
     }
@@ -26,7 +26,7 @@ client.on('message', msg => {
     if (msg.content.startsWith(prefix + 'esay')) {
         let args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
-            msg.reply(`Please provide something for embed.`);
+            return msg.reply(`Please provide something for embed.`);
         }
         const embed = new Discord.RichEmbed()
         .setTitle(`Message from ${msg.author.tag}`)
