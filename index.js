@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`[READY] Logged in as ${client.user.tag}`);
-  client.user.setGame(`Type ${prefix}cmds to get started.`)
+  client.user.setGame(`Type ${prefix}help`)
 });
 
 let prefix = "b:"
