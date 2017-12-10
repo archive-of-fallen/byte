@@ -88,12 +88,27 @@ client.on('message', msg => {
     } else if(msg.content === "<@!388630510399782912> prefix") {
       return msg.reply(`My prefix is: \`${prefix}\`.`);
     }
+  
+    if (msg.content.startsWith(prefix + 'help')) {
+      const embed = new Discord.RichEmbed()
+      .setTitle(`Help documentation`)
+      .setColor(`RANDOM`)
+      .addField(`Prefix`, `${prefix}`)
+      .addField(`Full Command Reference`, `Type b:cmds`)
+      .addField(`Invite`, `[here](https://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=388630510399782912)`)
+      .addField(`Support Server`, `[here](https://discord.gg/2AxaHpf)`)
+      .addField(`Contributor List`, `void#4938`)
+      .addField(`Author`, `FallenLight#5149`)
+      // .setFooter(``)
+      
+      msg.channel.send({embed});
+    }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
         const embed = new Discord.RichEmbed()
         .setTitle(`Commands`)
         .setColor(`RANDOM`)
-        .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\``)
+        .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}help\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\``)
         // .setFooter(``)
 
         msg.channel.send({embed});
