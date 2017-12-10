@@ -91,7 +91,7 @@ client.on('message', msg => {
   
     if (msg.content.startsWith(prefix + 'help')) {
       const embed = new Discord.RichEmbed()
-      .setTitle(`Help documentation`)
+      .setTitle(`HELP DOCUMENTATION 📥`)
       .addBlankField(true)
       .setColor(`RANDOM`)
       .addField(`Prefix`, `${prefix}`)
