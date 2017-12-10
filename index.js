@@ -91,7 +91,8 @@ client.on('message', msg => {
   
     if (msg.content.startsWith(prefix + 'help')) {
       const embed = new Discord.RichEmbed()
-      .setTitle(`Help documentation\n`)
+      .setTitle(`Help documentation`)
+      .addBlankField(true)
       .setColor(`RANDOM`)
       .addField(`Prefix`, `${prefix}`)
       .addField(`Full Command Reference`, `Type b:cmds`)
