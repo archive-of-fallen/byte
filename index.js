@@ -92,7 +92,7 @@ client.on('message', msg => {
     if (msg.content.startsWith(prefix + 'help')) {
       const embed = new Discord.RichEmbed()
       .setTitle(`HELP DOCUMENTATION 📥`)
-      .addBlankField(true)
+      // .addBlankField(true) - Remove blank field (for now)
       .setColor(`RANDOM`)
       .addField(`Prefix`, `${prefix}`)
       .addField(`Full Command Reference`, `Type b:cmds`)
