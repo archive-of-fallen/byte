@@ -11,7 +11,7 @@ let prefix = "b:"
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix)) return;
     if (msg.author.bot) return;
-    if (blacklisted.ids == msg.author.id) return;
+    if (msg.author.id === blacklisted.ids) return msg.reply("Test");
   
     if (msg.content.startsWith(prefix + 'ping')) {
         msg.channel.send("Pinging...").then(sent => {
