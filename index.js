@@ -8,10 +8,12 @@ client.on('ready', () => {
 
 let prefix = "b:"
 
+let blacklistedIds = [ "229552088525438977", "260246864979296256" ]
+
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix)) return;
     if (msg.author.bot) return;
-    if (ids.includes(msg.author.id)) return msg.reply("Test");
+    if (blacklistedIds.includes(msg.author.id)) return msg.reply("Test");
   
     if (msg.content.startsWith(prefix + 'ping')) {
         msg.channel.send("Pinging...").then(sent => {
