@@ -85,9 +85,9 @@ client.on('message', msg => {
        }
      }
   
-    if (msg.content === "<@388630510399782912> prefix") {
-      return msg.reply(`My prefix is: \`${prefix}\`.`);
-    } 
+    /* if (msg.content === "<@388630510399782912> prefix") {
+      return msg.reply(`My prefix is: \`${prefix}\`.`); - !Command is broken!
+    } */
   
     if (msg.content.startsWith(prefix + 'help')) {
       const embed = new Discord.RichEmbed()
