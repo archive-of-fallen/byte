@@ -87,9 +87,7 @@ client.on('message', msg => {
   
     if (msg.content === "<@388630510399782912> prefix") {
       return msg.reply(`My prefix is: \`${prefix}\`.`);
-    } else if(msg.content === "<@!388630510399782912> prefix") {
-      return msg.reply(`My prefix is: \`${prefix}\`.`);
-    }
+    } else if(msg.content === "<@!388630510399782912> prefix") // If the bot has a nickname.
   
     if (msg.content.startsWith(prefix + 'help')) {
       const embed = new Discord.RichEmbed()
