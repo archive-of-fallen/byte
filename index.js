@@ -10,6 +10,14 @@ let prefix = "b:"
 
 let blacklistedIds = [ "229552088525438977", "356013659522072587" ] // void#4938 and Sasukieh#3697
 
+let blacklistedGuilds = [ "390024249676660746" ] // The ID 390024249676660746 is the ID for my testing server.
+
+client.on('guildCreate', guild => {
+  if (blacklistedGuilds.includes(guild.id)) {
+    guild.leave();
+  }
+});
+
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix)) return;
     if (msg.author.bot) return;
