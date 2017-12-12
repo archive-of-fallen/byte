@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 let prefix = "b:"
 
-let blacklistedIds = [ "229552088525438977" ]
+let blacklistedIds = [ "229552088525438977", "356013659522072587" ] // void#4938 and Sasukieh#3697
 
 client.on('message', msg => {
     if (!msg.content.startsWith(prefix)) return;
