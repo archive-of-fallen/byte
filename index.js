@@ -10,7 +10,7 @@ let prefix = "b:"
 
 let blacklistedIds = [ "229552088525438977", "356013659522072587" ] // void#4938 and Sasukieh#3697
 
-let blacklistedGuilds = [ "390024249676660746" ] 
+let blacklistedGuilds = [ "0" ] 
 
 client.on('guildCreate', guild => {
   if (blacklistedGuilds.includes(guild.id)) {
