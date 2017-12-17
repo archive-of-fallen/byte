@@ -9,6 +9,7 @@ client.on('ready', () => {
 let prefix = "b:"
 
 let blacklistedIds = [ "229552088525438977", "356013659522072587" ] 
+// All IDs in this array are user IDs. 
 
 let blacklistedGuilds = [ "350888950078111745" ] 
 // I will not reveal the blacklisted users nor guilds. They have obviously done something very wrong to deserve this blacklist.
