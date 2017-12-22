@@ -110,9 +110,7 @@ client.on('message', msg => {
       if (!args) {
         return msg.reply("What do you want my name to be?");
       }
-      return msg.channel.send("👌 Successfully set my nickname to **${args}**!").then(nick => {
-        msg.guild.member(client.user).setNickname(args, `${msg.author.tag} executed the nick command.`);
-      }
+      return msg.channel.send(`👌 Successfully set my nickname to **${args}**!`).then(msg.guild.member(client.user).setNickname(args, `${msg.author.tag} executed the nick command.`));
     }
   
     if (msg.content.startsWith(prefix + 'help')) {
