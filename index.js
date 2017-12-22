@@ -95,9 +95,23 @@ client.on('message', msg => {
        }
      }
   
-    /* if (msg.content === "<@388630510399782912> prefix") {
-      return msg.reply(`My prefix is: \`${prefix}\`.`); - !Command is broken!
-    } */
+    /* 
+    if (msg.content === "<@388630510399782912> prefix") {
+      return msg.reply(`My prefix is: \`${prefix}\`.`); - Broken
+    } 
+    */
+  
+    if (msg.content.startsWith(prefix + 'nick')) {
+      let args = msg.content.split(' ').slice(1).join(' ');
+      if (msg.author.id !== "300992784020668416") return;
+      if (!msg.guild.me.permissions.has("CHANGE_NICKNAME")) {
+        return msg.reply("I do not have permission to execute this command!");
+      }
+      if (!args) {
+        return msg.reply("What do you want my name to be?");
+      }
+      return client.member.setNickname(`${args}`);
+    }
   
     if (msg.content.startsWith(prefix + 'help')) {
       const embed = new Discord.RichEmbed()
