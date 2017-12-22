@@ -110,7 +110,7 @@ client.on('message', msg => {
       if (!args) {
         return msg.reply("What do you want my name to be?");
       }
-      return client.user.setNickname(`${args}`);
+      return client.user.setNickname(args, `${msg.author.tag} executed the nick command.`);
     }
   
     if (msg.content.startsWith(prefix + 'help')) {
