@@ -110,7 +110,7 @@ client.on('message', msg => {
       if (!args) {
         return msg.reply("What do you want my name to be?");
       }
-      if (args === "reset") {
+      if (args === "reset" || "-r" || "--reset") {
         return msg.channel.send(`👌 Successfully cleared my nickname!`).then(msg.guild.member(client.user).setNickname('', `${msg.author.tag} executed the nick command.`));
       }
       return msg.channel.send(`👌 Successfully set my nickname to **${args}**!`).then(msg.guild.member(client.user).setNickname(args, `${msg.author.tag} executed the nick command.`));
