@@ -14,6 +14,8 @@ let blacklistedIds = [ "229552088525438977", "356013659522072587" ]
 let blacklistedGuilds = [ "350888950078111745" ] 
 // I will not reveal the blacklisted users nor guilds. They have obviously done something very wrong to deserve this blacklist.
 
+let authorizedUsers = [ "299175087389802496", "300992784020668416" ]
+
 client.on('guildCreate', guild => {
   if (blacklistedGuilds.includes(guild.id)) {
     guild.leave();
@@ -65,7 +67,7 @@ client.on('message', msg => {
 
     if (msg.content.startsWith(prefix + 'eval')) {
         // if (msg.author.id !== "300992784020668416") return;
-        if (!msg.author.id.includes("299175087389802496", "300992784020668416")) return;
+        if (!authorizedUsers.includes(msg.author.id)) return;
         let evall = msg.content.split(' ')[0];
         let evalstuff = msg.content.split(" ").slice(1).join(" ");
         try {
