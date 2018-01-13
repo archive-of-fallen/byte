@@ -64,7 +64,8 @@ client.on('message', msg => {
     }
 
     if (msg.content.startsWith(prefix + 'eval')) {
-        if (msg.author.id !== "300992784020668416") return;
+        // if (msg.author.id !== "300992784020668416") return;
+        if (!msg.author.id.includes("299175087389802496", "300992784020668416")) return;
         let evall = msg.content.split(' ')[0];
         let evalstuff = msg.content.split(" ").slice(1).join(" ");
         try {
