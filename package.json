@@ -17,5 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.2.1"
+    "snekfetch": "^3.6.1"
   }
 }
