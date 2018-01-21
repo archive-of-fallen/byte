@@ -107,7 +107,7 @@ client.on('message', msg => {
   
     if (msg.content.startsWith(prefix + 'nick')) {
       let args = msg.content.split(' ').slice(1).join(' ');
-      if (msg.author.id !== "300992784020668416") return;
+      if (!authorizedUsers.includes(msg.author.id)) return;
       if (!msg.guild.me.permissions.has("CHANGE_NICKNAME")) {
         return msg.reply("I do not have permission to execute this command!");
       }
