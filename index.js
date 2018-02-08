@@ -99,11 +99,11 @@ client.on('message', msg => {
        }
      }
   
-    /* 
-    if (msg.content === "<@388630510399782912> prefix") {
-      return msg.reply(`My prefix is: \`${prefix}\`.`); - Broken
+     
+    if ( (new RegExp(`^(<|!|@)+${client.user.id}>(\\s)+prefix$`)).test(msg.content) ) {
+        return msg.reply(`My prefix is: \`${prefix}\`.`);
     } 
-    */
+    
   
     if (msg.content.startsWith(prefix + 'nick')) {
       let args = msg.content.split(' ').slice(1).join(' ');
