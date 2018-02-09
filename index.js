@@ -24,8 +24,14 @@ client.on('guildCreate', guild => {
 });
 
 client.on('message', msg => {
-    if (!msg.content.startsWith(prefix)) return;
     if (msg.author.bot) return;
+
+    //If mentioned and given prefix command, reply with the current prefix
+    if ( (new RegExp(`^(<|!|@)+${client.user.id}>(\\s)+prefix$`)).test(msg.content) ) {
+        return msg.reply(`My prefix is: \`${prefix}\`.`);
+    } 
+
+    if (!msg.content.startsWith(prefix)) return;
     if (blacklistedIds.includes(msg.author.id)) return;
   
     if (msg.content.startsWith(prefix + 'ping')) {
@@ -99,10 +105,7 @@ client.on('message', msg => {
        }
      }
   
-     
-    if ( (new RegExp(`^(<|!|@)+${client.user.id}>(\\s)+prefix$`)).test(msg.content) ) {
-        return msg.reply(`My prefix is: \`${prefix}\`.`);
-    } 
+    
     
   
     if (msg.content.startsWith(prefix + 'nick')) {
@@ -126,7 +129,7 @@ client.on('message', msg => {
       // .addBlankField(true) - Remove blank field (for now)
       .setColor(`RANDOM`)
       .addField(`Prefix`, `${prefix}`)
-      .addField(`Full Command Reference`, `Type b:cmds`)
+      .addField(`Full Command Reference`, `Type ${prefix}cmds`)
       .addField(`Invite`, `[here](https://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=388630510399782912)`)
       .addField(`Support Server`, `[here](https://discord.gg/2AxaHpf)`)
       .addField(`Contributor List`, `Puerosola#5543`)
