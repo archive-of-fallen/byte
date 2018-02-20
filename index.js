@@ -132,7 +132,7 @@ client.on('message', msg => {
       .addField(`Full Command Reference`, `Type ${prefix}cmds`)
       .addField(`Invite`, `[here](https://discordapp.com/oauth2/authorize/?permissions=8&scope=bot&client_id=388630510399782912)`)
       .addField(`Support Server`, `[here](https://discord.gg/2AxaHpf)`)
-      .addField(`Contributor List`, `Puerosola#5543`)
+      .addField(`Contributor List`, `Puerosola#0064`)
       .addField(`Author`, `FallenLight#5149`)
       // .setFooter(``)
       
