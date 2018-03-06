@@ -158,7 +158,7 @@ client.on('message', msg => {
         const embed = new Discord.RichEmbed()
         .setTitle(`Commands`)
         .setColor(`RANDOM`)
-        .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}help\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\``)
+        .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}help\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\`\n\`${prefix}pirate [text]\``)
         // .setFooter(``)
 
         msg.channel.send({embed});
