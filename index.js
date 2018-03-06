@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
+const pirateSpeak = require("pirate-speak");
 
 client.on('ready', () => {
   console.log(`[READY] Logged in as ${client.user.tag}`);
