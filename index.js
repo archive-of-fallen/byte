@@ -148,9 +148,9 @@ client.on('message', msg => {
       } 
       
       try {
-        msg.channel.send(pirateSpeak.translate(toTranslate));
+            msg.channel.send(pirateSpeak.translate(toTranslate));
       } catch(err) {
-        console.error(err);
+            console.error(err);
       }
     }
 
