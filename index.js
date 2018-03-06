@@ -139,6 +139,20 @@ client.on('message', msg => {
       
       msg.channel.send({embed});
     }
+  
+    if (msg.content.startsWith(prefix + 'pirate')) {
+      const toTranslate = msg.content.split(' ').slice(1).join(' ');
+      
+      if(!toTranslate) {
+        return msg.reply("Please provide something for me to pirate-ify!");
+      } 
+      
+      try {
+        msg.channel.send(pirateSpeak.translate(toTranslate));
+      } catch(err) {
+        console.error(err);
+      }
+    }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
         const embed = new Discord.RichEmbed()
