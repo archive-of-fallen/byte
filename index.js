@@ -8,7 +8,7 @@ client.on('ready', () => {
   client.user.setGame(`Type ${prefix}help`)
 });
 
-let prefix = "b:"
+let prefix = "b;"
 
 let blacklistedIds = [ "229552088525438977", "356013659522072587" ] 
 // All IDs in this array are user IDs. 
