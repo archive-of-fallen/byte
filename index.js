@@ -8,15 +8,16 @@ client.on('ready', () => {
   client.user.setGame(`Type ${prefix}help`)
 });
 
+// Keeping as let for future customizable prefixes
 let prefix = "b;"
 
-let blacklistedIds = [ "229552088525438977", "356013659522072587" ] 
+const blacklistedIds = [ "229552088525438977", "356013659522072587" ] 
 // All IDs in this array are user IDs. 
 
-let blacklistedGuilds = [ "350888950078111745" ] 
+const blacklistedGuilds = [ "350888950078111745" ] 
 // I will not reveal the blacklisted users nor guilds. They have obviously done something very wrong to deserve this blacklist.
 
-let authorizedUsers = [ "299175087389802496", "300992784020668416" ]
+const authorizedUsers = [ "299175087389802496", "300992784020668416" ]
 
 client.on('guildCreate', guild => {
   if (blacklistedGuilds.includes(guild.id)) {
