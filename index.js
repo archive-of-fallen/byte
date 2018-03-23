@@ -106,10 +106,7 @@ client.on('message', msg => {
          msg.channel.send({embed});
        }
      }
-  
-    
-    
-  
+
     if (msg.content.startsWith(prefix + 'nick')) {
       let args = msg.content.split(' ').slice(1).join(' ');
       if (!authorizedUsers.includes(msg.author.id)) return;
