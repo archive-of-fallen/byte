@@ -167,6 +167,7 @@ client.on('message', msg => {
       .setTitle(`New report from ${msg.author.tag}!`)
       .setColor(`RANDOM`)
       .addField('Server:', `${msg.guild.id}`)
+      .addField('Reporter\'s ID:', `${msg.author.id}`)
       .addField('Body:', `${toReport}`)
       
       reportC.send({ embed });
