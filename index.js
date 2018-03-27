@@ -77,8 +77,8 @@ client.on('message', msg => {
     if (msg.content.startsWith(prefix + 'eval')) {
         // if (msg.author.id !== "300992784020668416") return;
         if (!authorizedUsers.includes(msg.author.id)) return;
+        const code = msg.content.split(" ").slice(1).join(" ");
         try {
-         const code = msg.content.split(" ").slice(1).join(" ");
          let evaled = eval(code);
          if (!code) {
              return msg.channel.send("Please provide something for me to eval!");
