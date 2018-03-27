@@ -163,6 +163,8 @@ client.on('message', msg => {
         return msg.reply('Please provide something to report!');
       }
       
+      msg.channel.send('Report successfully submitted!\nPlease note: abuse of this command is punishable by blacklist for both you and your guild.')
+      
       const embed = new Discord.RichEmbed()
       .setTitle(`New report from ${msg.author.tag}!`)
       .setColor(`RANDOM`)
