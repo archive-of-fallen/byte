@@ -43,7 +43,7 @@ client.on('message', msg => {
     }
 
     if (msg.content.startsWith(prefix + 'say')) {
-        let args = msg.content.split(' ').slice(1).join(' ');
+        const args = msg.content.split(' ').slice(1).join(' ');
         if (!args) {
             return msg.reply(`Please provide something for me to say.`);
         }
@@ -51,7 +51,7 @@ client.on('message', msg => {
     } 
 
     if (msg.content.startsWith(prefix + 'esay')) {
-        let args = msg.content.split(' ').slice(1).join(' ');
+        const args = msg.content.split(' ').slice(1).join(' ');
         if (!msg.channel.permissionsFor(client.user).has("EMBED_LINKS")) {
             return msg.reply(`I cannot send an embed in this channel. Please make sure I have the \`EMBED_LINKS\` permission.`);
         }
@@ -106,7 +106,7 @@ client.on('message', msg => {
      }
 
     if (msg.content.startsWith(prefix + 'nick')) {
-      let args = msg.content.split(' ').slice(1).join(' ');
+      const args = msg.content.split(' ').slice(1).join(' ');
       if (!authorizedUsers.includes(msg.author.id)) return;
       if (!msg.guild.me.permissions.has("CHANGE_NICKNAME")) {
         return msg.reply("I do not have permission to execute this command!");
@@ -154,6 +154,21 @@ client.on('message', msg => {
       if (!authorizedUsers.includes(msg.author.id)) return;
       
       return msg.channel.send(`${client.guilds.map(g => `${g.name} (ID - ${g.id} | Owner - ${g.owner.id}): ${g.memberCount} total members`).join('\n\n')}`);
+    }
+  
+    if (msg.content.startsWith(prefix + 'report')) {
+      const toReport = msg.content.split(' ').slice(1).join(' ');
+      const reportC = client.channels.get('428107431063584768');
+      if(!toReport) {
+        return msg.reply('Please provide something to report!');
+      }
+      
+      const embed = new Discord.RichEmbed()
+      .setTitle(`New report from ${msg.author}!`)
+      .setColor(`RANDOM`)
+      .addField('Body:', '${toReport}')
+      
+      reportC.send({ embed });
     }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
