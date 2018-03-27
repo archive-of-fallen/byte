@@ -5,7 +5,7 @@ const pirateSpeak = require("pirate-speak");
 
 client.on('ready', () => {
   console.log(`[READY] Logged in as ${client.user.tag}`);
-  client.user.setGame(`Type ${prefix}help`)
+  client.user.setActivity(`Type ${prefix}help`)
 });
 
 // Keeping as let for future customizable prefixes
