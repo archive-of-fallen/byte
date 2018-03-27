@@ -77,8 +77,6 @@ client.on('message', msg => {
     if (msg.content.startsWith(prefix + 'eval')) {
         // if (msg.author.id !== "300992784020668416") return;
         if (!authorizedUsers.includes(msg.author.id)) return;
-        let evall = msg.content.split(' ')[0];
-        let evalstuff = msg.content.split(" ").slice(1).join(" ");
         try {
          const code = msg.content.split(" ").slice(1).join(" ");
          let evaled = eval(code);
@@ -93,7 +91,7 @@ client.on('message', msg => {
            .setTitle(`EVAL ✅`)
        
            .setColor("0x4f351")
-           .setDescription(`📥 Input: \n \`\`\`${evalstuff}\`\`\` \n 📤 Output: \n  \`\`\`${clean(evaled)}\`\`\``)
+           .setDescription(`📥 Input: \n \`\`\`${code}\`\`\` \n 📤 Output: \n  \`\`\`${clean(evaled)}\`\`\``)
        
          msg.channel.send({embed});
        } catch (err) {
@@ -101,7 +99,7 @@ client.on('message', msg => {
          .setTitle(`EVAL ❌`)
     
          .setColor("0xff0202")
-         .setDescription(`📥 Input: \n \`\`\`${evalstuff}\`\`\` \n 📤 Output: \n  \`\`\`${clean(err)}\`\`\``)
+         .setDescription(`📥 Input: \n \`\`\`${code}\`\`\` \n 📤 Output: \n  \`\`\`${clean(err)}\`\`\``)
     
          msg.channel.send({embed});
        }
@@ -150,6 +148,12 @@ client.on('message', msg => {
       } catch(err) {
             console.error(err);
       }
+    }
+  
+    if (msg.content.startsWith(prefix + 'servers')) {
+      if (!authorizedUsers.includes(msg.author.id)) return;
+      
+      return msg.channel.send(`${client.guilds.map(g => `${g.name} (ID - ${g.id} | Owner - ${g.owner.id}): ${g.memberCount} total members`).join('\n\n')}`);
     }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
