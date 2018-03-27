@@ -166,7 +166,7 @@ client.on('message', msg => {
       const embed = new Discord.RichEmbed()
       .setTitle(`New report from ${msg.author}!`)
       .setColor(`RANDOM`)
-      .addField('Body:', '${toReport}')
+      .addField('Body:', `${toReport}`)
       
       reportC.send({ embed });
     }
