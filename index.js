@@ -166,7 +166,7 @@ client.on('message', msg => {
       const embed = new Discord.RichEmbed()
       .setTitle(`New report from ${msg.author.tag}!`)
       .setColor(`RANDOM`)
-      .addField('Server:', `${msg.guild.id}`);
+      .addField('Server:', `${msg.guild.id}`)
       .addField('Body:', `${toReport}`)
       
       reportC.send({ embed });
