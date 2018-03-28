@@ -25,12 +25,12 @@ client.on('guildCreate', guild => {
   } 
   
   const jlC = client.channels.get("428547884229591057");
-  jlC.send(`Joined:\nGuild Name: ${guild.name}\nOwner: ${guild.owner}\nGuild ID: ${guild.id}\nRegion: ${guild.region}\nMember Count: ${guild.members.filter(m => !m.bot).size} Users | ${guild.members.filter(m => m.bot).size}`);
+  jlC.send(`__**Joined:**__\n\nGuild Name: ${guild.name}\nOwner: ${guild.owner}\nGuild ID: ${guild.id}\nRegion: ${guild.region}\nMember Count: ${guild.members.filter(m => !m.bot).size} Users | ${guild.members.filter(m => m.bot).size} Bots`);
 });
 
 client.on('guildDelete', guild => {
   const jlC = client.channels.get("428547884229591057");
-  jlC.send(`Left:\nGuild Name: ${guild.name}\nOwner: ${guild.owner}\nGuild ID: ${guild.id}\nRegion: ${guild.region}\nMember Count: ${guild.members.filter(m => !m.bot).size} Users | ${guild.members.filter(m => m.bot).size}`);
+  jlC.send(`__**Left:**__\n\nGuild Name: ${guild.name}\nOwner: ${guild.owner}\nGuild ID: ${guild.id}\nRegion: ${guild.region}\nMember Count: ${guild.members.filter(m => !m.bot).size} Users | ${guild.members.filter(m => m.bot).size} Bots`);
 });
 
 client.on('message', msg => {
