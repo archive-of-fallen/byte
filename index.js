@@ -19,10 +19,28 @@ const blacklistedGuilds = [ "350888950078111745" ]
 
 const authorizedUsers = [ "299175087389802496", "300992784020668416", "423770070485827585" ]
 
+const guildUpdateC = client.channels.get("428547884229591057");
+
 client.on('guildCreate', guild => {
   if (blacklistedGuilds.includes(guild.id)) {
     guild.leave();
   } 
+  
+  guildUpdateC.send(`Joined:
+  \nGuild Name: ${guild.name}
+  \nOwner: ${guild.owner}
+  \nGuild ID: ${guild.id}
+  \nRegion: ${guild.region}
+  \nMember Count: ${guild.members.filter(m => !m.bot).size} Users | ${guild.members.filter(m => m.bot).size}`);
+});
+
+client.on('guildDelete', guild => {
+  guildUpdateC.send(`Left:
+  \nGuild Name: ${guild.name}
+  \nOwner: ${guild.owner}
+  \nGuild ID: ${guild.id}
+  \nRegion: ${guild.region}
+  \nMember Count: ${guild.members.filter(m => !m.bot).size} Users | ${guild.members.filter(m => m.bot).size}`);
 });
 
 client.on('message', msg => {
