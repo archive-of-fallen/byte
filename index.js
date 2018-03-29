@@ -14,7 +14,7 @@ let prefix = "b;"
 const blacklistedIds = [ "229552088525438977", "356013659522072587" ] 
 // All IDs in this array are user IDs. 
 
-const blacklistedGuilds = [ "350888950078111745" ] 
+const blacklistedGuilds = [ "350888950078111745", "428548683752275977" // Remove latter ID ] 
 // I will not reveal the blacklisted users nor guilds. They have obviously done something very wrong to deserve this blacklist.
 
 const authorizedUsers = [ "299175087389802496", "300992784020668416", "423770070485827585" ]
