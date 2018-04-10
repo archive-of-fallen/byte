@@ -189,7 +189,7 @@ client.on('message', msg => {
 __**More Indepth Statistics:**__
 \nBots: ${msg.guild.members.filter(mem => mem.user.bot).size}
 Bot Listing:\`\`\`${msg.guild.members.filter(mem => mem.user.bot).map(bots => bots.user.tag).join(',\n').toString()}\`\`\`
-\n\nUsers: ${msg.guild.members.filter(mem => !mem.user.bot).size}
+Users: ${msg.guild.members.filter(mem => !mem.user.bot).size}
 User Listing:\`\`\`${msg.guild.members.filter(mem => !mem.user.bot).map(users => users.user.tag).join(',\n').toString()}\`\`\``);
     }
 
