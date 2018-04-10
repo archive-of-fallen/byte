@@ -185,12 +185,12 @@ client.on('message', msg => {
   
     if (msg.content.startsWith(prefix + 'members')) {
       msg.channel.send(`__**Inaccurate Statistics:**__
-\nTotal members: ${msg.guild.memberCount}\n\n
+\nTotal members: ${msg.guild.memberCount}\n
 __**More Indepth Statistics:**__
 \nBots: ${msg.guild.members.filter(mem => mem.user.bot).size}
-\nBot Listing:\`\`\`${msg.guild.members.filter(mem => mem.user.bot).map(bots => bots.user.tag).join(',\n').toString()}\`\`\`
+Bot Listing:\`\`\`${msg.guild.members.filter(mem => mem.user.bot).map(bots => bots.user.tag).join(',\n').toString()}\`\`\`
 \n\nUsers: ${msg.guild.members.filter(mem => !mem.user.bot).size}
-\nUser Listing:\`\`\`${msg.guild.members.filter(mem => !mem.user.bot).map(users => users.user.tag).join(',\n').toString()}\`\`\``);
+User Listing:\`\`\`${msg.guild.members.filter(mem => !mem.user.bot).map(users => users.user.tag).join(',\n').toString()}\`\`\``);
     }
 
     if (msg.content.startsWith(prefix + 'cmds')) {
