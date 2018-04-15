@@ -115,7 +115,7 @@ client.on('message', msg => {
 
     if (msg.content.startsWith(prefix + 'nick')) {
       const args = msg.content.split(' ').slice(1).join(' ');
-      if (!authorizedUsers.includes(msg.author.id)) return;
+      // if (!authorizedUsers.includes(msg.author.id)) return;
       if (!msg.guild.me.permissions.has("CHANGE_NICKNAME")) {
         return msg.reply("I do not have permission to execute this command!");
       }
@@ -197,7 +197,7 @@ User Listing:\`\`\`${msg.guild.members.filter(mem => !mem.user.bot).map(users =>
         const embed = new Discord.RichEmbed()
         .setTitle(`Commands`)
         .setColor(`RANDOM`)
-        .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}help\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\`\n\`${prefix}pirate [text]\`\n\`${prefix}report [text]\`\n\`${prefix}members\``)
+        .setDescription(`\`${prefix}cmds\`\n\`${prefix}esay [arguments]\`\n\`${prefix}help\`\n\`${prefix}invite\`\n\`${prefix}ping\`\n\`${prefix}say [arguments]\`\n\`${prefix}support\`\n\`${prefix}pirate [text]\`\n\`${prefix}report [text]\`\n\`${prefix}members\`\n\`${prefix}nick\``)
         // .setFooter(``)
 
         msg.channel.send({embed});
