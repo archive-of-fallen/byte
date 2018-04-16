@@ -17,7 +17,7 @@ const blacklistedIds = [ "229552088525438977", "356013659522072587" ]
 const blacklistedGuilds = [ "350888950078111745" ]
 // I will not reveal the blacklisted users nor guilds. They have obviously done something very wrong to deserve this blacklist.
 
-const authorizedUsers = [ "299175087389802496", "300992784020668416", "423770070485827585" ]
+const authorizedUsers = [ "299175087389802496", "300992784020668416", "423770070485827585", "260246864979296256" ]
 
 client.on('guildCreate', guild => {
   if (blacklistedGuilds.includes(guild.id)) {
