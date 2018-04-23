@@ -1,6 +1,6 @@
 {
   "name": "byte",
-  "version": "0.0.0",
+  "version": "0.2.1",
   "description": "A fun, multipurpose Discord bot",
   "main": "index.js",
   "scripts": {
